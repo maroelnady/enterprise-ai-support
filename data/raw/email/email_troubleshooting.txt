@@ -1,0 +1,48 @@
+Enterprise IT Services
+Email Troubleshooting Guide
+
+Document ID: IT-EML-002
+Version: 1.0
+Department: IT Services
+
+1. Purpose
+
+This guide provides troubleshooting steps for common company email
+problems.
+
+2. Cannot Sign In
+
+If the employee cannot sign in:
+
+- Verify the company email address.
+- Verify that the account is active.
+- Confirm that the current password is being used.
+- Complete MFA verification if requested.
+
+3. Email Not Synchronizing
+
+If new messages are not appearing:
+
+- Verify internet connectivity.
+- Restart the email application.
+- Confirm that the account is connected.
+- Check whether the mailbox is full.
+
+4. Suspicious Email
+
+Employees must not open suspicious links or attachments.
+
+If a suspicious email is received, report it using the approved
+security reporting process.
+
+5. Escalation
+
+If the issue continues, contact the IT Service Desk.
+
+Provide:
+
+- Email address.
+- Error message.
+- Approximate time the problem occurred.
+
+Never provide a password or MFA verification code.

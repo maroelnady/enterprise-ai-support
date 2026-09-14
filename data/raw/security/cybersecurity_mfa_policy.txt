@@ -1,0 +1,57 @@
+Enterprise IT Services
+Cybersecurity and MFA Policy
+
+Document ID: IT-SEC-001
+Version: 1.0
+Department: Information Security
+
+1. Purpose
+
+This policy defines basic security requirements for employees using
+Enterprise IT Services.
+
+2. Multi-Factor Authentication
+
+MFA is required for systems that have been configured to use
+multi-factor authentication.
+
+Employees must approve only MFA requests that they initiated.
+
+3. Unexpected MFA Requests
+
+If an employee receives an unexpected MFA request:
+
+- Do not approve the request.
+- Do not provide the MFA code to anyone.
+- Report the unexpected request to Information Security or the
+  IT Service Desk.
+
+4. Password Security
+
+Employees must:
+
+- Use strong passwords.
+- Never share passwords.
+- Never share MFA verification codes.
+- Avoid entering company credentials into unapproved websites.
+
+5. Phishing
+
+Employees should be cautious of messages requesting:
+
+- Passwords.
+- MFA codes.
+- Sensitive company information.
+- Urgent financial or account actions.
+
+Suspicious messages should be reported using the approved security
+reporting process.
+
+6. Security Incident
+
+If an employee believes that their account may have been compromised,
+they should immediately contact the IT Service Desk or Information
+Security team.
+
+Employees should describe the suspected incident but must not send
+their password or MFA verification code.

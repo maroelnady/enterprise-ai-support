@@ -1,0 +1,47 @@
+Enterprise IT Services
+SharePoint Access Policy
+
+Document ID: IT-SP-001
+Version: 1.0
+Department: IT Services
+
+1. Purpose
+
+This policy defines how employees request access to SharePoint sites
+and resources.
+
+2. Access Request
+
+Employees who require access to a SharePoint site must submit an
+access request through the approved IT Service Desk process.
+
+The request should include:
+
+- Employee name.
+- Department.
+- SharePoint site name.
+- Business justification.
+- Manager approval when required.
+
+3. Approval
+
+Access to restricted SharePoint sites requires approval from the
+appropriate site owner or authorized manager.
+
+4. Access Provisioning
+
+After approval, IT Services or the designated SharePoint administrator
+grants the required permissions.
+
+Employees should receive confirmation after access has been provisioned.
+
+5. Security
+
+Employees must only access information required for their job duties.
+
+Employees must not share their account credentials with another person.
+
+6. Support
+
+If access is not available after approval, contact the IT Service Desk
+and provide the SharePoint site name and error message.

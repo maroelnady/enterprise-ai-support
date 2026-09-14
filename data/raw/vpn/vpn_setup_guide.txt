@@ -1,0 +1,47 @@
+Enterprise IT Services
+VPN Setup Guide
+
+Document ID: IT-VPN-002
+Version: 1.0
+Department: IT Services
+
+1. Prerequisites
+
+Before configuring the VPN client, confirm that:
+
+- VPN access has been approved.
+- The VPN account has been activated.
+- Multi-factor authentication has been registered.
+- The device is connected to the internet.
+
+2. VPN Client
+
+Install the approved Enterprise VPN client on the company-managed device.
+
+3. Configuration
+
+Open the VPN client and enter the server address provided by IT Services.
+
+Enter your company username and password.
+
+Complete the MFA verification when prompted.
+
+4. Connection
+
+Select Connect.
+
+A successful connection indicates that the device has established
+secure remote access.
+
+5. Troubleshooting
+
+If the connection fails:
+
+- Confirm that your internet connection is working.
+- Verify your username.
+- Verify that MFA is working.
+- Confirm that your VPN account has been activated.
+
+If the problem continues, contact the IT Service Desk.
+
+End of Document

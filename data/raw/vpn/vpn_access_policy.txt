@@ -1,0 +1,60 @@
+Enterprise IT Services
+VPN Access Policy
+
+Document ID: IT-VPN-001
+Version: 1.0
+Department: IT Services
+
+1. Purpose
+
+This policy defines the requirements for employees who need secure
+remote access to Enterprise IT Services systems.
+
+2. Eligibility
+
+VPN access is available to employees who require remote access to
+authorized company systems.
+
+3. Approval
+
+Employees must obtain manager approval before VPN access can be
+activated.
+
+4. Security Requirements
+
+All VPN users must:
+
+- Use company-managed devices.
+- Use multi-factor authentication (MFA).
+- Protect their VPN credentials.
+- Never share VPN credentials with another person.
+
+5. Access Request
+
+The employee must submit a VPN access request through the IT Service
+Desk.
+
+The request must include:
+
+- Employee name
+- Department
+- Manager approval
+- Business justification
+
+6. Activation
+
+After approval, the IT Service Desk activates the VPN account.
+The employee receives configuration instructions after activation.
+
+7. Security Restrictions
+
+VPN credentials must not be shared.
+
+Users must disconnect from VPN when remote access is no longer required.
+
+8. Support
+
+If VPN access does not work after activation, the employee should
+contact the IT Service Desk and provide the error message.
+
+End of Document

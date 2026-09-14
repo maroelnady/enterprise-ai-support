@@ -1,0 +1,53 @@
+Enterprise IT Services
+Account Lockout Procedure
+
+Document ID: IT-ACC-002
+Version: 1.0
+Department: IT Services
+
+1. Purpose
+
+This procedure explains how employees should respond when their company
+account becomes locked.
+
+2. Common Causes
+
+An account may become locked after multiple unsuccessful authentication
+attempts.
+
+Common causes include:
+
+- Incorrect password entered repeatedly.
+- An outdated password saved on a device.
+- An application repeatedly attempting authentication with old credentials.
+
+3. Initial Troubleshooting
+
+The employee should:
+
+- Stop repeated login attempts.
+- Verify that the correct username is being used.
+- Confirm that the current password is being used.
+- Check whether another device or application may be using an old password.
+
+4. Unlock Request
+
+If the account remains locked, the employee should contact the IT Service
+Desk.
+
+The employee should provide:
+
+- Username.
+- Approximate time the lockout occurred.
+- Error message if available.
+
+5. Security
+
+Employees must never provide their password or MFA verification code
+when requesting account support.
+
+6. Escalation
+
+If the account repeatedly becomes locked after successful unlocking,
+the IT Service Desk should investigate possible applications or devices
+using outdated credentials.

@@ -1,0 +1,48 @@
+Enterprise IT Services
+SharePoint Troubleshooting Guide
+
+Document ID: IT-SP-002
+Version: 1.0
+Department: IT Services
+
+1. Purpose
+
+This guide provides troubleshooting steps for common SharePoint access
+and usage problems.
+
+2. Access Denied
+
+If SharePoint displays an access denied message:
+
+- Confirm that you are signed in with your company account.
+- Confirm that access to the site has been approved.
+- Verify that the correct SharePoint site is being accessed.
+- Contact the IT Service Desk if the issue continues.
+
+3. Page Does Not Load
+
+If a SharePoint page does not load:
+
+- Verify internet connectivity.
+- Refresh the page.
+- Try the approved company browser.
+- Check whether other SharePoint sites are accessible.
+
+4. Document Cannot Be Opened
+
+If a document cannot be opened:
+
+- Confirm that you have permission to access the document.
+- Verify that the document still exists.
+- Retry the operation.
+
+5. Escalation
+
+When contacting IT Support, provide:
+
+- SharePoint site name.
+- Page or document name.
+- Error message.
+- Approximate time of the issue.
+
+Never provide your password or MFA verification code.

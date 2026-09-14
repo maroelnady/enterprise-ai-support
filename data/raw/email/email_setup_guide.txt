@@ -1,0 +1,47 @@
+Enterprise IT Services
+Email Setup Guide
+
+Document ID: IT-EML-001
+Version: 1.0
+Department: IT Services
+
+1. Purpose
+
+This guide explains how employees can configure their company email
+on an approved device.
+
+2. Prerequisites
+
+Before configuring email, the employee must have:
+
+- An active company account.
+- An assigned company email address.
+- Internet connectivity.
+- MFA registration where required.
+
+3. Email Configuration
+
+Employees should use the approved Enterprise Email application.
+
+When prompted:
+
+- Enter the company email address.
+- Enter the company password.
+- Complete MFA verification if requested.
+
+The application should automatically retrieve the approved email
+configuration.
+
+4. Security
+
+Employees must:
+
+- Use only approved email applications.
+- Protect their company credentials.
+- Never share passwords or MFA codes.
+- Report suspicious email activity to IT Security.
+
+5. Support
+
+If email configuration fails, the employee should contact the
+IT Service Desk and provide the error message.

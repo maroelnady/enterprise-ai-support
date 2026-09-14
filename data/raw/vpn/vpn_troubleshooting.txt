@@ -1,0 +1,48 @@
+Enterprise IT Services
+VPN Troubleshooting Guide
+
+Document ID: IT-VPN-003
+Version: 1.0
+Department: IT Services
+
+1. Authentication Failure
+
+If the VPN reports an authentication failure:
+
+- Confirm that the username is correct.
+- Confirm that the VPN account is activated.
+- Confirm that the password is correct.
+- Complete the MFA request.
+
+2. MFA Failure
+
+If MFA does not work:
+
+- Confirm that the registered authentication device is available.
+- Check whether the MFA notification was received.
+- Do not repeatedly approve unexpected MFA requests.
+- Contact the IT Service Desk if MFA remains unavailable.
+
+3. Connection Failure
+
+If the VPN cannot establish a connection:
+
+- Verify internet connectivity.
+- Restart the VPN client.
+- Confirm that the VPN server address is correct.
+- Try connecting again.
+
+4. Escalation
+
+If troubleshooting does not resolve the issue, contact the IT Service Desk.
+
+Provide:
+
+- Username
+- Error message
+- Approximate time of failure
+- Screenshot of the error if available
+
+Never provide your password or MFA verification code to the Service Desk.
+
+End of Document

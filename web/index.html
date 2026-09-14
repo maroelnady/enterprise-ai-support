@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Enterprise AI Support</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f4f7f6;
+            color: #1f2937;
+        }
+
+        .app {
+            width: 100%;
+            max-width: 1000px;
+            height: 90vh;
+            margin: 5vh auto;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #0a3d2e;
+            color: white;
+            padding: 22px 28px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            opacity: 0.85;
+            font-size: 14px;
+        }
+
+        .chat {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+            background: #f8faf9;
+        }
+
+        .message {
+            display: flex;
+            margin-bottom: 18px;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .bubble {
+            max-width: 75%;
+            padding: 13px 17px;
+            border-radius: 14px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        .user .bubble {
+            background: #1a6645;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .assistant .bubble {
+            background: white;
+            border: 1px solid #e1e7e4;
+            border-bottom-left-radius: 4px;
+        }
+
+        .welcome {
+            text-align: center;
+            color: #64748b;
+            margin-top: 15%;
+        }
+
+        .welcome h2 {
+            color: #0a3d2e;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+            padding: 18px;
+            border-top: 1px solid #e5e7eb;
+            background: white;
+        }
+
+        textarea {
+            flex: 1;
+            resize: none;
+            height: 52px;
+            padding: 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #1a6645;
+        }
+
+        button {
+            width: 110px;
+            border: none;
+            border-radius: 12px;
+            background: #0a3d2e;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1a6645;
+        }
+
+        button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        .typing {
+            color: #64748b;
+            font-style: italic;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 700px) {
+            .app {
+                height: 100vh;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .bubble {
+                max-width: 88%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="header">
+        <h1>Enterprise AI Support</h1>
+        <p>AI Assistant for Enterprise IT & SharePoint Support</p>
+    </div>
+
+    <div class="chat" id="chat">
+
+        <div class="welcome" id="welcome">
+            <h2>How can I help you?</h2>
+            <p>
+                Ask a question about SharePoint, IT procedures,
+                or report an IT support issue.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="input-area">
+
+        <textarea
+            id="message"
+            placeholder="Type your question..."
+            onkeydown="handleKeyDown(event)"
+        ></textarea>
+
+        <button id="sendButton" onclick="sendMessage()">
+            Send
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+const API_URL = "http://127.0.0.1:8000/chat";
+
+const chat = document.getElementById("chat");
+const messageInput = document.getElementById("message");
+const sendButton = document.getElementById("sendButton");
+const welcome = document.getElementById("welcome");
+
+
+function addMessage(text, sender) {
+
+    if (welcome) {
+        welcome.remove();
+    }
+
+    const message = document.createElement("div");
+    message.className = `message ${sender}`;
+
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
+
+    bubble.textContent = text;
+
+    message.appendChild(bubble);
+    chat.appendChild(message);
+
+    chat.scrollTop = chat.scrollHeight;
+}
+
+
+function showTyping() {
+
+    const typing = document.createElement("div");
+
+    typing.id = "typing";
+    typing.className = "typing";
+
+    typing.textContent = "AI Support is working...";
+
+    chat.appendChild(typing);
+
+    chat.scrollTop = chat.scrollHeight;
+}
+
+
+function removeTyping() {
+
+    const typing = document.getElementById("typing");
+
+    if (typing) {
+        typing.remove();
+    }
+}
+
+
+async function sendMessage() {
+
+    const message = messageInput.value.trim();
+
+    if (!message) {
+        return;
+    }
+
+    addMessage(message, "user");
+
+    messageInput.value = "";
+
+    sendButton.disabled = true;
+
+    showTyping();
+
+    try {
+
+        const response = await fetch(API_URL, {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                message: message
+            })
+
+        });
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                `API request failed: ${response.status}`
+            );
+
+        }
+
+
+        const data = await response.json();
+
+        removeTyping();
+
+        addMessage(
+            data.response,
+            "assistant"
+        );
+
+    }
+
+    catch (error) {
+
+        removeTyping();
+
+        addMessage(
+            "Unable to connect to Enterprise AI Support. Please try again.",
+            "assistant"
+        );
+
+        console.error(error);
+
+    }
+
+    finally {
+
+        sendButton.disabled = false;
+
+        messageInput.focus();
+
+    }
+}
+
+
+function handleKeyDown(event) {
+
+    if (event.key === "Enter" && !event.shiftKey) {
+
+        event.preventDefault();
+
+        sendMessage();
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
