@@ -1,8 +1,10 @@
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from src.agents.test_crewai_orchestrator import run_orchestrator
@@ -10,11 +12,13 @@ from src.agents.test_crewai_orchestrator import run_orchestrator
 
 load_dotenv()
 
-
 FRONTEND_URL = os.getenv(
     "FRONTEND_URL",
     "http://127.0.0.1:5500",
 )
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+WEB_DIR = BASE_DIR / "web"
 
 
 app = FastAPI(
@@ -56,3 +60,15 @@ def chat(request: ChatRequest):
     return ChatResponse(
         response=result
     )
+
+
+# Serve the Chat UI from FastAPI
+# This must come AFTER the API routes above.
+app.mount(
+    "/",
+    StaticFiles(
+        directory=str(WEB_DIR),
+        html=True,
+    ),
+    name="web",
+)
